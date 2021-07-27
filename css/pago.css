@@ -16,7 +16,10 @@ header{
     flex-direction: row;
 }
 
-
+.varra .error{
+  
+     margin-left: 50px;
+}
 header #titulo{
     float: left;
     color: floralwhite;

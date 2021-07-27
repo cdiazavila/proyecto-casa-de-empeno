@@ -34,42 +34,45 @@
     
    <nav class="varra">
   
-         <form action="#" class="row">
+         <form action="#" class="row" id="formulario-buscar">
 
                  <label for="cc">Cedula</label> 
-                 <input type="text" class="form-control" placeholder="cedula">
+                 <input type="text" class="form-control" placeholder="cedula" id="cc-buscar" name="cc-buscar">
               
                 <button class="btn btn-primary " id="buscar">Buscar</button>
-          
+               
          </form>
-
+         <div id="ErrorM1" class="error"></div>
          <div id="deuda" class="pago">
-               valor a pagar:200 
+             
              </div>
 
              <div id="Valor-empeno" class="pago">
-               Precio Empeño: 34556
+               
              </div>
+
+          
 
    </nav>
    <aside>
    <div class="form_RegistrarPago">
           <h2>Registrar Pago</h2>
-         <form action="#" class="form-inline formul">
-             
+         <form method="post" class="form-inline formularioRegistro">
+        
              <div class="">
                  <label for="cc">Cedula</label><br>   
-                 <input type="text" class="form-control" placeholder="cedula">
+                 <input type="text" class="form-control" placeholder="cedula" name="cc" id="cc">
              </div>
-                 
-               <div class="">
-                 <label for="fecha">Fecha</label><br>   
-                 <input type="text" class="form-control" placeholder="Fecha">
+             <div class="">  
+                 <input type="text" class="form-control" placeholder="idA" name="idA" id="idA">
+               </div>
+               <div class="">  
+                 <input type="text" class="form-control" placeholder="Fecha" name="fecha" id="fecha">
                </div>
              
                  <div class="">
                     <label for="monton">Monton</label><br>   
-                    <input type="text" class="form-control" placeholder="Monton">
+                    <input type="text" class="form-control" placeholder="Monton" name="monton" id="monton">
                  </div><br>
                  
                   <button type="submit" class="btn btn-primary form-control " id="registra">Guardar</button>
@@ -77,14 +80,18 @@
                   <button  type="reset" class="btn form-control " id="cancelar">Cancelar</button>
                
          </form>
+
+         <div id="ErrorM2"></div>
       </div>
     
    </aside>
     <section id="container">
     <div id="tabla">
-    <table class="table  table-striped table-hover " >
+    <table class="table  table-striped table-hover tabla" >
             <thead class="thead-dark">
              <tr style="color:#000000;">
+                 <th>NONBRE EMPLEADO</th>
+                 <th>APELLIDO EMPLEADO</th>
                  <th>CEDULA</th>
                  <th>NOMBRES</th>
                  <th>APELLIDOS</th>
@@ -92,14 +99,8 @@
                  <th>MONTON</th>
              </tr>
             </thead>
-             <tr>
-                 <td>carlos</td>
-                 <td>carlos</td>
-                 <td>carlos</td>
-                 <td>carlos</td>
-                 <td>340</td>
-             </tr>
             
+               
              </table>
              </div>
       
@@ -108,3 +109,6 @@
     
 
     <footer><p>Casa de empeño &</p></footer>
+   <script src="../js/Rpago.js"></script>
+    </body>
+</html>
