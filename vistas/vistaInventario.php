@@ -34,18 +34,9 @@
     
    <nav class="varra">
   
-         <form action="#" class="row" id="formulario-buscar">
-
-                 <label for="cc">Cedula</label> 
-                 <input type="text" class="form-control" placeholder="cedula" id="cc-buscar" name="cc-buscar">
-              
-                <button class="btn btn-primary " id="buscar">Buscar</button>
-               
-         </form>
+        
          <div id="ErrorM1" class="error"></div>
-         <div id="deuda" class="pago">
-             
-             </div>
+        
 
              <div id="Valor-empeno" class="pago">
                
@@ -56,26 +47,21 @@
    </nav>
    <aside>
    <div class="form_RegistrarPago">
-          <h2>Registrar Pago</h2>
+          <h2>Generar inventario</h2>
          <form method="post" class="form-inline formularioRegistro">
         
-             <div class="">
-                 <label for="cc">Cedula</label><br>   
-                 <input type="text" class="form-control" placeholder="cedula" name="cc" id="cc">
-             </div>
-             <div class="">  
-                 <input type="text" class="form-control" placeholder="idA" name="idA" id="idA">
-               </div>
+            
                <div class="">  
-                 <input type="text" class="form-control" placeholder="Fecha" name="fecha" id="fecha">
+                   <label for="fechaI">Fecha Inicio</label><br>
+                 <input type="date" class="form-control" placeholder="Fecha inicio" name="fechaI" id="fechaI">
                </div>
              
                  <div class="">
-                    <label for="monton">Monton</label><br>   
-                    <input type="text" class="form-control" placeholder="Monton" name="monton" id="monton">
+                    <label for="fechaF">Fecha Final</label><br>   
+                    <input type="date" class="form-control" placeholder="Fecha final" name="fechaF" id="fechaF">
                  </div><br>
                  
-                  <button type="submit" class="btn btn-primary form-control " id="registra">Guardar</button>
+                  <button type="submit" class="btn btn-primary form-control " id="registra">calcular</button>
           
                   <button  type="reset" class="btn form-control " id="cancelar">Cancelar</button>
                
@@ -90,10 +76,10 @@
     <table class="table  table-striped table-hover tabla" >
             <thead class="thead-dark">
              <tr style="color:#000000;">
-                 <th>NONBRE EMPLEADO</th>
-                 <th>APELLIDO EMPLEADO</th>
-                 <th>CEDULA</th>
-                 <th>NOMBRES</th>
+                 <th>ID ADMIN</th>
+                 <th>NOMBRE ADMIN</th>
+                 <th>ID CLIENTE</th>
+                 <th>NOMBRES C</th>
                  <th>APELLIDOS</th>
                  <th>FECHA</th>
                  <th>MONTON</th>
@@ -109,7 +95,7 @@
     
 
     <footer><p>Casa de empeño &</p></footer>
-   <script src="../js/Rpago.js"></script>
-   <script src="../js/dist/jspdf.min.js"></script>
+   <script src="../js/inventario.js"></script>
+   
     </body>
 </html>

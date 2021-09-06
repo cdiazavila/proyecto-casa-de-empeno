@@ -25,6 +25,7 @@ function peticion(){
               location.href='vistas/VistaPrincipal.php';   
               for(let i=0; i<data.length; i++){
                localStorage.setItem('id',data[i].id); 
+               localStorage.setItem('nombre',data[i].nombre); 
               } 
           }
           

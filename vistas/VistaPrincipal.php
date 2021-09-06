@@ -23,12 +23,13 @@
     <nav>
      <ul>
              <a href="VistaRegistrarCliente.php"><samp class="glyphicon glyphicon-plus" ></samp> Registrar Cliente</a> 
-             <a href="VistaRegistarProducto.php"><samp class="glyphicon  glyphicon-plus" ></samp> Registro Producto </a>
-             <a href="VistaRegistrarPago.php"> <samp class="glyphicon  glyphicon-plus" ></samp> Registrar Pago</a>
+             <a href="#"><samp class="glyphicon glyphicon-list-alt"> Ver empeños</samp></a>
+             <a href="vistaInventario.php"><samp> Inventario</samp></a>
              <a href="#"><samp class="glyphicon glyphicon-list-alt"> Editar Datos </samp></a>
-             <a href="#"><samp class="glyphicon glyphicon-log-in"></samp>  Salir</a>
+             <a  href="cerrer_sesion.php"  onclick="localStorage.clear()"><samp class="glyphicon glyphicon-log-in"></samp>  Salir</a>
       
        </ul>
+     
     </nav>
     </header>
 

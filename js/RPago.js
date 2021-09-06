@@ -13,7 +13,7 @@ const  monton=document.getElementById('monton');
 const  dueda=document.getElementById('deuda');
 const  errorm1=document.getElementById('ErrorM1');
 const  errorm2=document.getElementById('ErrorM2');
-
+var nombre=new Array(1);
 
  
 // metodo que me octiene la fecha actual del sistema 
@@ -30,6 +30,25 @@ const  errorm2=document.getElementById('ErrorM2');
     idA.value=localStorage.getItem('id'); ;
     console.log(fechas.value)
  });
+
+ // realizo factura 
+
+ function crearFactura(){
+  var doc = new jsPDF();
+        
+  doc.setFontSize(26);
+  doc.text(80, 20, 'FACTURA ');
+
+  doc.text(20, 40, 'Cedula'+cc.value );
+      
+  doc.text(120, 40, 'Pago $'+monton.value);
+  doc.text(20, 80,  fechas.value);
+  
+  doc.text(10, 100, 'Generada por :'+ localStorage.getItem('nombre')+ '\n con Id: '+localStorage.getItem('id'));
+  // Save the PDF
+  doc.save(`factura.pdf`);
+ }
+
 // realizamos el metodo para la peticion de la busqueda de los pagos realizados por el 
 //cliente  dueño de la cc ingresada
 
@@ -67,7 +86,7 @@ function buscarCliente(){
             </tr>
              
               `;
-            
+              nombre[0]=data[0].Nombres; 
            suma+=parseInt(data[i].monton);
           }
           
@@ -131,9 +150,22 @@ botonBuscar.addEventListener('click', (e)=>{
     e.preventDefault();
        
         validar();
-     
 });
+// actualizar el precio del empeño 
+function actualizarSaldo(){
+  var datos = new FormData(formularioRegistro); 
+  var url = '../php/actualizar.php';
+  fetch(url,{
+     method: 'POST',
+     body: datos 
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
 
+  });
+
+}
 // validar formulario Insertar Pago 
 
 function validarIsertarPago(){
@@ -147,7 +179,8 @@ function validarIsertarPago(){
      
     }else{
         insertarPago();
-       
+         crearFactura();
+         actualizarSaldo();
     }
     setTimeout(() => {
         errorm2.style.display='none';
@@ -160,5 +193,6 @@ function validarIsertarPago(){
 formularioRegistro.addEventListener('submit',(e)=>{
      e.preventDefault();
      validarIsertarPago();
+     
 })
 
